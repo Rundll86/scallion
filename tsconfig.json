@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "CommonJS",
+        "strict": true,
+        "baseUrl": ".",
+        "moduleResolution": "node",
+        "allowJs": true,
+        "checkJs": true,
+        "experimentalDecorators": true,
+    },
+    "include": [
+        "src/**/*.ts"
+    ]
+}
