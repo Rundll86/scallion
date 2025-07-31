@@ -1,6 +1,6 @@
 import AppleWeight from "./components/AppleWeight";
 import { Scallion, elements } from "./scallion";
-const { div, br } = elements;
+const { div } = elements;
 const { bottom } = AppleWeight.slots;
 const app = new Scallion(
     AppleWeight()(

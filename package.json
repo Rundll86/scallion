@@ -2,9 +2,13 @@
     "name": "scallion",
     "author": "FallingShrimp",
     "devDependencies": {
+        "@eslint/js": "^9.32.0",
+        "eslint": "^9.32.0",
+        "globals": "^16.3.0",
         "html-webpack-plugin": "^5.6.3",
         "raw-loader": "^4.0.2",
         "ts-loader": "^9.5.2",
+        "typescript-eslint": "^8.38.0",
         "vue": "^3.5.18",
         "webpack": "^5.101.0",
         "webpack-cli": "^6.0.1",
@@ -13,7 +17,8 @@
     },
     "scripts": {
         "build": "webpack --mode production",
-        "dev": "webpack serve --mode development"
+        "dev": "webpack serve --mode development",
+        "lint": "eslint src"
     },
     "dependencies": {
         "typescript": "^5.8.3"

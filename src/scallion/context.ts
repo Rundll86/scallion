@@ -1,5 +1,5 @@
 import * as vue from "@vue/runtime-dom";
-import { Component, isSlotDefine, SlotDefine } from "./component";
+import { isSlotDefine, SlotDefine } from "./component";
 export interface KeyPair<K, V> {
     key: K;
     value: V;
@@ -50,6 +50,6 @@ export function toNode(view: ViewNode): Node | null {
         return view.element;
     }
 }
-export function attach(element: HTMLElement, event: string, handler: Function) {
+export function attach<T extends HTMLElement, E extends keyof HTMLElementEventMap>(element: T, event: E, handler: (event: HTMLElementEventMap[E], target: T) => void) {
     element.addEventListener(event, (event) => handler(event, element));
 }

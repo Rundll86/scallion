@@ -9,7 +9,7 @@ export const elements = new Proxy({}, {
                 if (key === "style") {
                     Object.assign(element.element.style, value);
                 } else if (key.startsWith("$")) {
-                    attach(element.element, key.slice(1), value);
+                    attach(element.element, key.slice(1) as keyof HTMLElementEventMap, value);
                 } else {
                     element.element.setAttribute(String(key), value);
                 }
@@ -62,7 +62,7 @@ export function component<N extends string, S extends Record<string, SlotValidat
             }), {} as AttributeDict<A>), slotDict);
             attributes.forEach(attribute => {
                 if (attribute.key.startsWith("$")) {
-                    attach(result, attribute.key.slice(1), attribute.value);
+                    attach(result, attribute.key.slice(1) as keyof HTMLElementEventMap, attribute.value);
                 }
             });
             return result;
